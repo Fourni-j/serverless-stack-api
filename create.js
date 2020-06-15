@@ -1,5 +1,5 @@
 import * as uuid from "uuid";
-import handler from "./libs/handle-lib";
+import handler from "./libs/handler-lib";
 import dynamoDb from "./libs/dynamodb-lib";
 
 export const main = handler(async (event, context) => {
@@ -16,6 +16,6 @@ export const main = handler(async (event, context) => {
     };
 
     await dynamoDb.put(params);
-    
+
     return params.Item;
 });
